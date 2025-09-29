@@ -6,14 +6,36 @@
   <title>My Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-700 text-white font-sans">
   <!-- Navigation -->
-  <nav class="bg-blue-600 text-white p-4 sticky top-0">
+  <nav class="bg-indigo-600 text-white p-4 sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">My Portfolio</h1>
-      <ul class="flex space-x-6">
+      
+      <!-- Mobile menu button -->
+      <button class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      
+      <!-- Desktop menu -->
+      <ul class="hidden md:flex space-x-6">
         <li><a href="#about" class="hover:underline">About</a></li>
-        <li><a href="#projects" class="hover:underline">Projects</a></li>
+        <li><a href="#timeline" class="hover:underline">Timeline</a></li>
+        <li><a href="#skills" class="hover:underline">Skills</a></li>
+        <li><a href="#certificates" class="hover:underline">Certificates</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    
+    <!-- Mobile menu (hidden by default, toggle with JS) -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <ul class="flex flex-col space-y-4 p-4">
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#timeline" class="hover:underline">Timeline</a></li>
+        <li><a href="#skills" class="hover:underline">Skills</a></li>
+        <li><a href="#certificates" class="hover:underline">Certificates</a></li>
         <li><a href="#contact" class="hover:underline">Contact</a></li>
       </ul>
     </div>
@@ -23,31 +45,143 @@
   <section id="about" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-        Hi, I'm [Your Name], a passionate web developer with a knack for creating user-friendly and visually appealing websites. I specialize in front-end development and love working with modern frameworks.
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        A skilled, analytical and highly motivated Computer Science Graduate with a strong background in data analysis and machine learning. Aiming to contribute to the growth and success of an innovative organization by leveraging data-driven solutions to solve real world problems. Dedicated to utilizing my knowledge and analytical skills in order to drive data-informed decision making and to optimize business strategies.
       </p>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-white py-16">
+  <!-- Timeline Section -->
+  <section id="timeline" class="bg-gray-800 py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6 text-center">My Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Project One</h3>
-          <p class="text-gray-600 mb-4">A responsive e-commerce website built with HTML, CSS, and JavaScript.</p>
-          <a href="#" class="text-blue-600 hover:underline">View Project</a>
+      <h2 class="text-3xl font-bold mb-12 text-center">Timeline</h2>
+      <div class="relative">
+        <!-- Vertical timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 h-full"></div>
+        
+        <div class="mb-10 flex justify-between items-center w-full">
+          <div class="w-5/12"></div>
+          <div class="w-2/12 flex justify-center">
+            <div class="w-4 h-4 bg-indigo-600 rounded-full relative z-10"></div>
+          </div>
+          <div class="w-5/12 bg-gray-900 p-6 rounded-lg shadow-md flex items-start">
+            <img src="resource/bangkit_academy_logo.jpg" alt="Bangkit Academy Logo" class="w-24 h-24 mr-4 rounded">
+            <div>
+              <h2 class="text-white text-2xl font-semibold mb-2">Bangkit Academy<br>Machine Learning Path</h2>
+              <h3 class="text-white text-xl font-semibold mb-2">Feb 2022 - Jul 2022</h3>
+              <p class="text-gray-400 mb-4">Bangkit Academy</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Project Two</h3>
-          <p class="text-gray-600 mb-4">A task management app created with React and Tailwind CSS.</p>
-          <a href="#" class="text-blue-600 hover:underline">View Project</a>
+
+        <div class="mb-10 flex justify-between items-center w-full flex-row-reverse">
+          <div class="w-5/12"></div>
+          <div class="w-2/12 flex justify-center">
+            <div class="w-4 h-4 bg-indigo-600 rounded-full relative z-10"></div>
+          </div>
+          <div class="w-5/12 bg-gray-900 p-6 rounded-lg shadow-md flex items-start">
+            <img src="resource/logo_avs.png" alt="Avatar Solution Logo" class="w-24 h-24 mr-4 rounded">
+            <div>
+              <h2 class="text-white text-2xl font-semibold mb-2">Avatar Solution<br>Machine Learning Engineer</h2>
+              <h3 class="text-white text-xl font-semibold mb-2">Sep 2022 - Oct 2022</h3>
+              <p class="text-gray-400 mb-4">Room Classification Model and Restful API</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Project Three</h3>
-          <p class="text-gray-600 mb-4">A personal blog built with Next.js and Markdown.</p>
-          <a href="#" class="text-blue-600 hover:underline">View Project</a>
+
+        <div class="mb-10 flex justify-between items-center w-full">
+          <div class="w-5/12"></div>
+          <div class="w-2/12 flex justify-center">
+            <div class="w-4 h-4 bg-indigo-600 rounded-full relative z-10"></div>
+          </div>
+          <div class="w-5/12 bg-gray-900 p-6 rounded-lg shadow-md flex items-start">
+            <img src="resource/Logo-unud-baru.png" alt="Udayana Logo" class="w-24 h-24 mr-4 rounded">
+            <div>
+              <h2 class="text-white text-2xl font-semibold mb-2">Graduate with Honors<br>3.86 GPA</h2>
+              <h3 class="text-white text-xl font-semibold mb-2">2019 - 2023</h3>
+              <p class="text-gray-400 mb-4">Computer Science / Informatics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10 flex justify-between items-center w-full flex-row-reverse">
+          <div class="w-5/12"></div>
+          <div class="w-2/12 flex justify-center">
+            <div class="w-4 h-4 bg-indigo-600 rounded-full relative z-10"></div>
+          </div>
+          <div class="w-5/12 bg-gray-900 p-6 rounded-lg shadow-md flex items-start">
+            <img src="resource/rinnai_logo.jpg" alt="Rinnai Logo" class="w-24 h-24 mr-4 rounded">
+            <div>
+              <h2 class="text-white text-2xl font-semibold mb-2">PT Rinnai Indonesia<br>IT Programmer</h2>
+              <h3 class="text-white text-xl font-semibold mb-2">Apr 2025 - Now</h3>
+              <p class="text-gray-400 mb-4">Laravel Docker</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="bg-gray-800 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
+      <ul class="flex space-x-4 justify-center mb-2">
+        <li class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">CSS</li>
+        <li class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">HTML</li>
+        <li class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold">PHP</li>
+        <li class="bg-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Javascript</li>
+      </ul>
+      <ul class="flex space-x-4 justify-center mb-2">
+        <li class="bg-cyan-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Laravel</li>
+        <li class="bg-lime-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Python</li>
+        <li class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold">RestAPI</li>
+        <li class="bg-emerald-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Tensorflow</li>
+        <li class="bg-violet-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Bootstrap</li>
+      </ul>
+      <ul class="flex space-x-4 justify-center mb-2">
+        <li class="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Tailwind</li>
+        <li class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">SQL</li>
+        <li class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Git</li>
+        <li class="bg-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Docker</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="bg-gray-800 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-center">Certificates</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-white text-xl font-semibold mb-2">DeepLearning.AI TensorFlow Developer Specialization</h3>
+          <p class="text-gray-400 mb-4">DeepLearning.AI</p>
+          <a href="#" class="text-indigo-600 hover:underline">See Credentials</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-white text-xl font-semibold mb-2">TensorFlow: Data and Deployment</h3>
+          <p class="text-gray-400 mb-4">DeepLearning.AI</p>
+          <a href="#" class="text-indigo-600 hover:underline">See Credentials</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-white text-xl font-semibold mb-2">Google IT Automation with Python Specialization</h3>
+          <p class="text-gray-400 mb-4">Google</p>
+          <a href="#" class="text-indigo-600 hover:underline">See Credentials</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-white text-xl font-semibold mb-2">Mathematics for Machine Learning Specialization</h3>
+          <p class="text-gray-400 mb-4">Imperial College London</p>
+          <a href="#" class="text-indigo-600 hover:underline">See Credentials</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-white text-xl font-semibold mb-2">TensorFlow Developer Certification</h3>
+          <p class="text-gray-400 mb-4">TensorFlow</p>
+          <a href="#" class="text-indigo-600 hover:underline">See Credentials</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-white text-xl font-semibold mb-2">Bangkit Academy - Machine Learning</h3>
+          <p class="text-gray-400 mb-4">Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka</p>
+          <a href="#" class="text-indigo-600 hover:underline">See Credentials</a>
         </div>
       </div>
     </div>
@@ -57,20 +191,16 @@
   <section id="contact" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
-        Feel free to reach out for collaborations or just a friendly chat!
-      </p>
       <div class="flex justify-center space-x-4">
-        <a href="mailto:your.email@example.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Email Me</a>
-        <a href="https://github.com/yourusername" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">LinkedIn</a>
+        <a href="https://github.com/arvanwijaya01" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-gray-900">GitHub</a>
+        <a href="https://www.linkedin.com/in/arvanchrist-charlie-wijaya-5b7424238" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-indigo-900">LinkedIn</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white p-4 text-center">
-    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    <p>&copy; 2025 Arvanchrist Charlie Wijaya. All rights reserved.</p>
   </footer>
 
   <script>
@@ -82,6 +212,11 @@
           behavior: 'smooth'
         });
       });
+    });
+
+    // Simple JS to toggle mobile menu (add this if using vanilla JS)
+    document.querySelector('button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
 </body>
